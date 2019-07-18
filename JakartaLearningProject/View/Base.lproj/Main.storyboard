@@ -80,46 +80,82 @@
         <!--Achievement-->
         <scene sceneID="qYs-17-bR2">
             <objects>
-                <viewController storyboardIdentifier="s" title="Achievement" id="N7a-lh-1rq" customClass="AchievementController" customModule="JakartaLearningProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Achievement" id="N7a-lh-1rq" customClass="ExploreViewController" customModule="JakartaLearningProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q7B-ds-wYX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="08b-EU-Ygc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMN-9l-4bz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="-300" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Explored Place" id="eir-nh-YU1"/>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mrw-Ym-Wls">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UBX-A8-9if">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="ANW-cJ-rvq">
+                                    <size key="itemSize" width="394" height="275"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="tTa-bC-P5M">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="fDY-YZ-l5g" customClass="PhotoCell" customModule="JakartaLearningProject" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="394" height="275"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="275"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mTp-Ko-V8g">
+                                                    <rect key="frame" x="8" y="30" width="438" height="314"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="sys-fj-vCx">
+                                                            <rect key="frame" x="0.0" y="0.0" width="3840" height="2160"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="sys-fj-vCx" firstAttribute="leading" secondItem="mTp-Ko-V8g" secondAttribute="leading" id="GPg-uP-SkU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="sys-fj-vCx" secondAttribute="trailing" id="WZN-3o-EyJ"/>
+                                                        <constraint firstItem="sys-fj-vCx" firstAttribute="top" secondItem="mTp-Ko-V8g" secondAttribute="top" id="fF6-MD-Bi6"/>
+                                                        <constraint firstAttribute="bottom" secondItem="sys-fj-vCx" secondAttribute="bottom" id="tvZ-Ks-4Wl"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
                                         </view>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="imageView" destination="sys-fj-vCx" id="laW-5w-kdl"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="N7a-lh-1rq" id="aDi-sd-asp"/>
-                                    <outlet property="delegate" destination="N7a-lh-1rq" id="nYY-c6-c2Y"/>
+                                    <outlet property="dataSource" destination="N7a-lh-1rq" id="oMm-2d-pLb"/>
+                                    <outlet property="delegate" destination="N7a-lh-1rq" id="Iev-nj-Pm1"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <constraints>
-                            <constraint firstItem="08b-EU-Ygc" firstAttribute="bottom" secondItem="73h-gH-kZZ" secondAttribute="bottom" id="5E0-Wr-ZVe"/>
-                            <constraint firstItem="08b-EU-Ygc" firstAttribute="leading" secondItem="73h-gH-kZZ" secondAttribute="leading" id="JQT-9N-wuZ"/>
-                            <constraint firstItem="08b-EU-Ygc" firstAttribute="top" secondItem="73h-gH-kZZ" secondAttribute="top" id="Q4w-5R-Kkg"/>
-                            <constraint firstItem="08b-EU-Ygc" firstAttribute="trailing" secondItem="73h-gH-kZZ" secondAttribute="trailing" id="ii6-0e-uTV"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="73h-gH-kZZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Achievement" id="z9T-Sb-wyx"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mrw-Ym-Wls" id="gYd-d1-Kd6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRr-Kb-AmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0" width="3840" height="2160"/>
         <image name="peta-1" width="600" height="683"/>
     </resources>
 </document>
